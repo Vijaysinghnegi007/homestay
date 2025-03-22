@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import AppRoutes from "./routes/Index";
-// import AppRoutes from "./routes/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -17,33 +16,24 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [theme, setTheme] = useState("light"); // Default theme is light
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   // Function to toggle theme
   const toggleTheme = () => {
-    const currentTheme = document.documentElement.classList.contains("dark");
-    if (currentTheme) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setTheme("light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setTheme("dark");
-    }
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
   };
 
-  // Load theme from localStorage on mount
+  // Apply theme class to <html> on state change
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
-      setTheme("dark");
     } else {
       document.documentElement.classList.remove("dark");
-      setTheme("light");
     }
-  }, []);
+    console.log("Applied Theme:", theme);
+  }, [theme]);
 
   return (
     <Router>
