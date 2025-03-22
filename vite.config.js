@@ -41,4 +41,17 @@ export default defineConfig({
     },
   },
   plugins: [react(), tailwindcss()],
+  base: "/homestay/",
+  build: {
+    chunkSizeWarningLimit: 500,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            return "vendor"; // Separate vendor dependencies
+          }
+        },
+      },
+    },
+  },
 });

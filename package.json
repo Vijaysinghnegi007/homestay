@@ -1,9 +1,9 @@
 {
+  "homepage": "https://github.com/Vijaysinghnegi007/homestay.git",
   "name": "test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Vijaysinghnegi007/homestay.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
