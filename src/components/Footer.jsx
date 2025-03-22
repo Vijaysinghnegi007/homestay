@@ -83,15 +83,17 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center text-gray-600 dark:text-gray-400">
                 <MapPin className="w-5 h-5 mr-2" />
-                <span>123 HomeStay Street, San Francisco, CA 94105</span>
+                <span> Kamlashver mandir shrinagara gardwal </span>
               </div>
               <div className="flex items-center text-gray-600 dark:text-gray-400">
                 <Phone className="w-5 h-5 mr-2" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 6397833101</span>
+                <br/>
+                <span> +91 6395824411</span>
               </div>
               <div className="flex items-center text-gray-600 dark:text-gray-400">
                 <Mail className="w-5 h-5 mr-2" />
-                <span>contact@homestay.com</span>
+                <span>tripsntrekstravels@gmail.com</span>
               </div>
             </div>
           </div>

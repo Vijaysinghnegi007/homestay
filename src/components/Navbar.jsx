@@ -156,6 +156,7 @@ const Navbar = ({ toggleTheme, theme }) => {
         }}
         className="md:hidden bg-white dark:bg-gray-900 overflow-hidden"
       >
+        
         <div className="px-4 py-2 space-y-2">
           {navItems.map((item) => (
             <Link

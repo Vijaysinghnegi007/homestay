@@ -160,25 +160,25 @@ const Blog = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mt-16 bg-primary-600 text-white rounded-lg p-8 text-center"
+          className="mt-16 bg-primary-600 text-white rounded-lg p-6 md:p-8 text-center"
         >
-          <h2 className="text-2xl font-bold mb-4">
+          <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">
             Stay Updated with Our Latest Stories
           </h2>
-          <p className="mb-6">
+          <p className="text-sm md:text-base mb-4 md:mb-6">
             Subscribe to our newsletter and never miss out on travel tips and
             inspiration.
           </p>
           <form className="max-w-md mx-auto">
-            <div className="flex gap-4">
+            <div className="flex flex-col md:flex-row gap-3 md:gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+                className="flex-1 px-4 py-2 rounded-lg  focus:outline-none  focus:ring-white border-2 "
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-colors"
+                className="px-5 py-2 bg-white text-primary-600 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 Subscribe
               </button>
