@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children, adminOnly = false }) => {
 
   // Redirect to home if the user is not an admin
   if (adminOnly && user?.role !== "admin") {
-    return <Navigate to="/" />;
+    return <Navigate to="/homestay" />;
   }
 
   return <>{children}</>;

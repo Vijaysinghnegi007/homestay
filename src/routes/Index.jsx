@@ -21,7 +21,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       {/* Public Routes */}
-      <Route path="/" element={<Home />} />
+      <Route path="/homestay" element={<Home />} />
       <Route path="/rooms" element={<Search />} />
       <Route path="/homestay/:id" element={<HomestayDetails />} />
       <Route path="/login" element={<Login />} />

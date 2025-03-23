@@ -44,4 +44,6 @@
   animation: fade-in 0.5s ease-out;
 }
 
-@dark class;
+/* @dark class; */
+
+ @custom-variant dark (&:where(.dark, .dark *))

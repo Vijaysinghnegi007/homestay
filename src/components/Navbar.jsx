@@ -13,7 +13,7 @@ const Navbar = ({ toggleTheme, theme }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const navItems = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/homestay" },
     { label: "Our Rooms", path: "/rooms" },
     { label: "About", path: "/about" },
     { label: "Blog", path: "/blog" },

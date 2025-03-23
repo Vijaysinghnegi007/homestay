@@ -7,32 +7,29 @@ import Footer from "./components/Footer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
-
   return null;
 }
 
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
 
   // Function to toggle theme
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
   };
 
   // Apply theme class to <html> on state change
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    console.log("Applied Theme:", theme);
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
 
   return (
@@ -40,7 +37,7 @@ function App() {
       <AuthProvider>
         <ScrollToTop />
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
-          <Navbar toggleTheme={toggleTheme} />
+          <Navbar toggleTheme={toggleTheme} theme={theme} />
           <main>
             <AppRoutes />
           </main>
