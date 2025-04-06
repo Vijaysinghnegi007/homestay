@@ -6,20 +6,50 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   const login = async (email, password) => {
-    // TODO: Implement actual authentication
-    const mockUser = {
-      id: "1",
-      name: "John Doe",
-      email,
-      role: "user",
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
-    };
-    setUser(mockUser);
+    // Simulating different users (replace with real authentication logic)
+    const mockUsers = [
+      {
+        id: "1",
+        name: "John Doe",
+        email: "user@example.com",
+        role: "user",
+        avatar:
+          "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+        password: "12345678",
+      },
+      {
+        id: "2",
+        name: "Admin User",
+        email: "admin@example.com",
+        role: "admin",
+        avatar:
+          "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=100&h=100&fit=crop",
+        password: "12345678",
+      },
+      // Adding the new admin user
+      {
+        id: "3",
+        name: "Vijay Negi",
+        email: "negijay700@gmail.com",
+        role: "admin",
+        avatar:
+          "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop",
+        password: "12345678", // Adding password field for validation
+      },
+    ];
+
+    // Find a mock user by email
+    const user = mockUsers.find((u) => u.email === email);
+
+    if (user && (!user.password || user.password === password)) {
+      setUser(user); // Set user if found and password is correct
+    } else {
+      alert("Invalid email or password");
+    }
   };
 
   const logout = () => {
-    setUser(null);
+    setUser(null); // Clear the user on logout
   };
 
   return (

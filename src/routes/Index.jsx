@@ -20,7 +20,7 @@ import ProtectedRoute from "./ProtectedRoute";
 const AppRoutes = () => {
   return (
     <Routes>
-      {/* Public Routes */}
+      {/* Public Routes - Accessible to all users */}
       <Route path="/homestay" element={<Home />} />
       <Route path="/rooms" element={<Search />} />
       <Route path="/homestay/:id" element={<HomestayDetails />} />
@@ -34,7 +34,7 @@ const AppRoutes = () => {
       <Route path="/testimonials" element={<Testimonials />} />
       <Route path="/blog" element={<Blog />} />
 
-      {/* Protected Routes */}
+      {/* Protected Routes - Only logged-in users can access */}
       <Route
         path="/dashboard/*"
         element={
@@ -44,9 +44,9 @@ const AppRoutes = () => {
         }
       />
 
-      {/* Admin Protected Route */}
+      {/* Admin Protected Route - Only accessible by admin users */}
       <Route
-        path="/admin/*"
+        path="/homestay/admin/*" // Changed path to match your request
         element={
           <ProtectedRoute adminOnly>
             <AdminDashboard />
@@ -54,7 +54,7 @@ const AppRoutes = () => {
         }
       />
 
-      {/* Catch-All Route */}
+      {/* Catch-All Route - Handles 404 errors */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

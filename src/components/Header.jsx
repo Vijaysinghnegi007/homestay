@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search, Menu, X, Moon, Sun, User } from "lucide-react";
-// import { useTheme } from "../context/ThemeContext";
 import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
@@ -17,7 +16,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const navigationItems = [
-    { path: "/", label: "Home" },
+    { path: "/", label: "homestay" },
     { path: "/rooms", label: "Our Rooms" },
     { path: "/about", label: "About" },
     { path: "/blog", label: "Blog" },
@@ -71,7 +70,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center">
+          <Link to="/homestay" className="flex-shrink-0 flex items-center">
             <h1 className="text-2xl font-bold text-primary-600 dark:text-primary-400">
               HomeStay
             </h1>
@@ -94,8 +93,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Search Bar */}
-          <div className="hidden md:flex items-center flex-1 max-w-lg mx-8">
+          Search Bar
+          {/* <div className="hidden md:flex items-center flex-1 max-w-lg mx-8">
             <form onSubmit={handleSearchSubmit} className="w-full relative">
               <input
                 type="text"
@@ -106,7 +105,6 @@ const Header = () => {
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
 
-              {/* Search Results Dropdown */}
               {searchResults.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
                   {searchResults.map((result) => (
@@ -142,7 +140,7 @@ const Header = () => {
                 </div>
               )}
             </form>
-          </div>
+          </div> */}
 
           {/* Right Side Actions */}
           <div className="hidden md:flex items-center space-x-4">
