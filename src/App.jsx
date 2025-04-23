@@ -27,7 +27,7 @@ function App() {
     });
   };
 
-  // Apply theme class to <html> on state change
+  // Apply theme class
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
   }, [theme]);
