@@ -35,7 +35,7 @@ const Navbar = ({ toggleTheme, theme }) => {
     }
   };
 
-  const isHome = location.pathname === "/homestay";
+  const isHome = location.pathname === "/homestay/";
 
   return (
     <nav
@@ -49,7 +49,7 @@ const Navbar = ({ toggleTheme, theme }) => {
         <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <Link
-            to="/homestay"
+            to="/homestay/"
             className={`text-2xl font-bold ${
               isScrolled || !isHome
                 ? "text-primary-600 dark:text-primary-400"

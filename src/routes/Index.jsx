@@ -22,17 +22,18 @@ const AppRoutes = () => {
     <Routes>
       {/* Public Routes - Accessible to all users */}
       <Route path="/homestay" element={<Home />} />
-      <Route path="/rooms" element={<Search />} />
-      <Route path="/homestay/:id" element={<HomestayDetails />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/faq" element={<FAQ />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/terms-of-service" element={<TermsOfService />} />
-      <Route path="/testimonials" element={<Testimonials />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/" element={<Home />} />
+      <Route path="rooms" element={<Search />} />
+      <Route path="homestay/:id" element={<HomestayDetails />} />
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
+      <Route path="about" element={<About />} />
+      <Route path="contact" element={<Contact />} />
+      <Route path="faq" element={<FAQ />} />
+      <Route path="privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="terms-of-service" element={<TermsOfService />} />
+      <Route path="testimonials" element={<Testimonials />} />
+      <Route path="blog" element={<Blog />} />
 
       {/* Protected Routes - Only logged-in users can access */}
       <Route

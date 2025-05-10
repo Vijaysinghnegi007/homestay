@@ -16,7 +16,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   const navigationItems = [
-    { path: "/homestay", label: "homestay" },
+    { path: "/homestay/", label: "homestay" },
     { path: "/rooms", label: "Our Rooms" },
     { path: "/about", label: "About" },
     { path: "/blog", label: "Blog" },
