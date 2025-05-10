@@ -41,7 +41,7 @@ export default defineConfig({
     },
   },
   plugins: [react(), tailwindcss()],
-  base: "/homestay/",
+  base: "/homestay/",     
   build: {
     chunkSizeWarningLimit: 500,
     rollupOptions: {
