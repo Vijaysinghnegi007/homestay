@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Search, Moon, Sun, Menu, X } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
-
+import ThemeToggle from "./ThemeToggle";
 const Navbar = ({ toggleTheme, theme }) => {
   const { user, isAuthenticated, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,13 +80,7 @@ const Navbar = ({ toggleTheme, theme }) => {
             ))}
 
             {/* Theme Toggle Button */}
-            <button onClick={toggleTheme} className="p-2 rounded-full">
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-yellow-400" />
-              ) : (
-                <Moon className="w-5 h-5 text-black" />
-              )}
-            </button>
+            <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
 
             {/* User Dropdown */}
             {isAuthenticated ? (
@@ -131,18 +125,24 @@ const Navbar = ({ toggleTheme, theme }) => {
               </Link>
             )}
           </div>
+          <div className="md:hidden">
+            <ThemeToggle
+              toggleTheme={toggleTheme}
+              theme={theme}
+            />
 
-          {/* Mobile Menu Toggle */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2"
-          >
-            {isMenuOpen ? (
-              <X className="w-6 h-6 text-current" />
-            ) : (
-              <Menu className="w-6 h-6 text-current" />
-            )}
-          </button>
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className=" p-2"
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6 text-current" />
+              ) : (
+                <Menu className="w-6 h-6 text-current" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 

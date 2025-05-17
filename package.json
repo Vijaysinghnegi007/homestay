@@ -1,9 +1,20 @@
 {
-  "name": "test",
-  "homepage": "https://Vijaysinghnegi007.github.io/homestay/",
-  "private": true,
+  "name": "homestay",
   "version": "0.0.0",
+  "private": true,
+  "description": "",
+  "homepage": "https://Vijaysinghnegi007.github.io/homestay/",
+  "bugs": {
+    "url": "https://github.com/Vijaysinghnegi007/homestay/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vijaysinghnegi007/homestay.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

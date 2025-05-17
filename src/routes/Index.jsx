@@ -22,7 +22,7 @@ const AppRoutes = () => {
     <Routes>
       {/* Public Routes - Accessible to all users */}
       <Route path="/homestay" element={<Home />} />
-      <Route path="/" element={<Home />} />
+      {/* <Route path="/" element={<Home />} /> */}
       <Route path="rooms" element={<Search />} />
       <Route path="homestay/:id" element={<HomestayDetails />} />
       <Route path="login" element={<Login />} />

@@ -212,42 +212,44 @@ const Contact = () => {
             </motion.div>
 
             {/* FAQ Link */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              className="bg-primary-50 dark:bg-primary-900 p-6 rounded-lg"
-            >
-              <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100 mb-2">
-                Have a general question?
-              </h3>
-              <p className="text-primary-700 dark:text-primary-300 mb-4">
-                Check out our frequently asked questions for quick answers to
-                common queries.
-              </p>
-              <a
-                href="/faq"
-                className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
-              >
-                Visit FAQ Page
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </a>
-            </motion.div>
           </div>
         </div>
+        <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.4 }}
+        className="bg-primary-50 dark:bg-primary-900 p-6 rounded-lg mt-12"
+      >
+        <h3 className="text-lg font-semibold text-primary-900 dark:text-primary-100 mb-2">
+          Have a general question?
+        </h3>
+        <p className="text-primary-700 dark:text-primary-300 mb-4">
+          Check out our frequently asked questions for quick answers to common
+          queries.
+        </p>
+        <a
+          href="/faq"
+          className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300"
+        >
+          Visit FAQ Page
+          <svg
+            className="w-5 h-5 ml-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </a>
+      </motion.div>
       </div>
+
+      
     </div>
   );
 };

@@ -143,18 +143,10 @@ const Header = () => {
           </div> */}
 
           {/* Right Side Actions */}
+
           <div className="hidden md:flex items-center space-x-4">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="w-5 h-5 text-gray-300" />
-              ) : (
-                <Moon className="w-5 h-5 text-gray-700" />
-              )}
-            </button>
+            {/* toggle theme button  */}
+           <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
 
             {isAuthenticated ? (
               <div className="relative group">
